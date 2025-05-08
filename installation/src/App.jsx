@@ -1,25 +1,27 @@
 import React from "react";
 
 const App = () => {
-  // This function is non parameterized function so we can use it directly in the onClick event
-  const handleClick = () => {
-    alert("Button clicked!");
-  };
-  // This function is parameterized function so we need to use an arrow function to call it in the onClick event
-    const handleClickWithParam = (param) => {
-      alert(`Button clicked with param: ${param}`);
-    };
-  const wrapper = () => {
-    handleClickWithParam("Hello World");
-  };
-
-
+  let n = 5;
+  let b = true;
+  let s = "Hello World";
+  let a = [1, 2, 3, 4, 5];
+  let nu = null;
+  let u = undefined;
+  let o = { name: "John", age: 30, city: "New York" };
   return (
     <>
-      <h1>Hello World </h1>
-      <button onClick={handleClick}>Click here</button>
-      <button onClick={wrapper}>clickParam</button>
-      {/* onClick asks for callback so we will provide a callback and inside that you throw whatever you want just for example , click here button also had a onClick ,and handleClick function is acting like a callback function , but in case of clickParam we are passing a parameter to the function so we need to wrap it , so we first create an callback fuction and then call the function inside that callback function */}
+      <div className="main">
+        <h1>React App</h1>
+        <h2>Number: {n}</h2>
+        <h2>Boolean: {b}</h2>
+        <h2>String: {s}</h2>
+        <h2>Array: {a}</h2>
+        <h2>Null: {nu}</h2>
+        <h2>Undefined: {u}</h2>
+        {/* <h2>Object: {o}</h2>  */}
+        {/* object can't be rendered directly in JSX, but you can use JSON.stringify to convert it to a string */}
+        <h2>Object:{o.name}</h2>
+      </div>
     </>
   );
 };
