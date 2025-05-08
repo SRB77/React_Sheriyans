@@ -1,29 +1,27 @@
-import React from "react";
+import React from 'react'
 
 const App = () => {
-  let n = 5;
-  let b = true;
-  let s = "Hello World";
-  let a = [1, 2, 3, 4, 5];
-  let nu = null;
-  let u = undefined;
-  let o = { name: "John", age: 30, city: "New York" };
+  let profiles = [
+    { name: 'John Doe', age: 30 }, 
+    { name: 'Jane Smith', age: 25 }, 
+    { name: 'Alice Johnson', age: 28 }
+  ]
+   const updatedProfile = profiles.map((profile,index) => {
+    return (
+      <li key={index}>
+        <h3>Name : {profile.name}</h3>  
+        <small>Age : {profile.age}</small>
+      </li>
+    )
+   });
   return (
     <>
-      <div className="main">
-        <h1>React App</h1>
-        <h2>Number: {n}</h2>
-        <h2>Boolean: {b}</h2>
-        <h2>String: {s}</h2>
-        <h2>Array: {a}</h2>
-        <h2>Null: {nu}</h2>
-        <h2>Undefined: {u}</h2>
-        {/* <h2>Object: {o}</h2>  */}
-        {/* object can't be rendered directly in JSX, but you can use JSON.stringify to convert it to a string */}
-        <h2>Object:{o.name}</h2>
-      </div>
+      <h1>React App</h1>
+     <ol>
+      {updatedProfile}
+     </ol>
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
