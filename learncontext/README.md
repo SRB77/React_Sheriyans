@@ -13,7 +13,7 @@
 #### STEP3:-
 **Then  we will use (useContext) React hook for grabing the context and then extracting the data**
 
-> [!TIPS]
+> [!TIP]
 >React Context is made up of:
     React.createContext() – creates the context
     Context.Provider – makes the data available to child components
