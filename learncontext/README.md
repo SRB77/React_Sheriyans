@@ -18,6 +18,7 @@
     React.createContext() – creates the context
     Context.Provider – makes the data available to child components
     useContext(Context) – allows any component to read the data
+    
 ## Example of What Context Stores:
     User login info (username, token)
     Theme (light/dark)
