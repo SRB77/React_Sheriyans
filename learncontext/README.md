@@ -1,12 +1,25 @@
-# React + Vite
+# WHAT IS CONTEXT AND WHY WE SHOULD USE It ? 
+> [!NOTE]
+> we know about props and we also know that we pass data from parent to their child using props . but guess a case there is a parent component and inside that **(Parent>ChildA>ChildB>ChildC)** and a data is only required to ChildC which is present in parent we have to pass in this order (Parent>ChildA>ChildB>ChildC) which we call **props Drilling** and unncessary space and data flow will happen and the app will be less optimized ofcourse  . 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> [!IMPORTANT]
+ > Here comes the Context to directly pass data from Parent to Childc **(Parent > ChildC)** .Simply a context is global storage which contains the data and any of child component no matter how much deep it is can simply grab the data using Context .
 
-Currently, two official plugins are available:
+## STEPS TO ACHIEVE IT :- 
+#### STEP1:- 
+**we have to create our Context on the root Component which is App.js in my case**
+#### STEP2:-
+**Then we have to create an provider which will hold values and the list of components / a route of components who can access the context**
+#### STEP3:-
+**Then  we will use (useContext) React hook for grabing the context and then extracting the data**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+> [!TIPS]
+>React Context is made up of:
+    React.createContext() – creates the context
+    Context.Provider – makes the data available to child components
+    useContext(Context) – allows any component to read the data
+## Example of What Context Stores:
+    User login info (username, token)
+    Theme (light/dark)
+    Selected language (English, Hindi, etc.)
+    Cart items in shopping app
